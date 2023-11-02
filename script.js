@@ -64,18 +64,22 @@ function Round(playerSelection,ComputerSelection)
 
 function game()
 {
+  let P=0
+  let C=0
   for(let i =0;i<5;i++)
     {
       const player=prompt("rock,scissors,paper ?")
       const computer = getComputerChoice()
       const arr = Round(player,computer)
-      console.log("Round " + (i+1).toString(): )
+      console.log("Round " + (i+1).toString() )
       if(arr[0]===1)
       {
+        P=P+1
         console.log("You won!")
       }
       else if(arr[1]===1)
       {
+        C=C+1
         console.log("Yo lost!")
       }
       else
@@ -83,6 +87,9 @@ function game()
         console.log("null round")
       }
     }
+
+    document.querySelector('div').innerText= `Player: ${P} - ${C} : Computer`
 }
 
 
+game()
